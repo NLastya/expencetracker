@@ -5,18 +5,21 @@ import Balance from './components/Balance'
 import TransactionList from './components/TransactionList';
 import AddTransalctions from './components/addTransactions';
 
-import GlobalProvider from './components/AppReducer.js'
+import {GlobalProvider} from './components/GlobalState.js'
 import IncomeExpenses from './components/IncomeExpenses.js';
+
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <Balance/>
-      <IncomeExpenses/>
-      <TransactionList />
-      <AddTransalctions/>
-    </div>
+    <GlobalProvider>
+      <div className="App">
+        <Header/>
+        <Balance/>
+        <IncomeExpenses/>
+        <TransactionList />
+        <AddTransalctions/>
+      </div>
+    </GlobalProvider>
   );
 }
 
